@@ -15,13 +15,7 @@ const app = express();
 const port = 3000;
 
 // PostgreSQL Connection
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "postgres",
-  password: "shrawani123",
-  port: 5432,
-});
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -66,7 +60,7 @@ app.post("/register", async (req, res) => {
 // Admin Login Route
 app.post("/admin-login", (req, res) => {
   const { password } = req.body;
-  const ADMIN_PASSWORD = "admin123";
+  const ADMIN_PASSWORD = "";
   if (password === ADMIN_PASSWORD) {
     res.redirect("/admin");
   } else {
